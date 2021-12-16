@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 
 const Loja = (props) => {
   const {id, nome, logo, logo_transparent,categorias} = props.loja;
@@ -15,10 +16,18 @@ const Loja = (props) => {
         }
       </ul>
       <Link to={`/lojas/${id}`}>
-        <button type='button'>Details</button>
+        <Button type='button'>Details</Button>
       </Link>
     </div>
   )
 }
 
 export default Loja;
+
+const Button = styled.button`
+  background: darkBlue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px cyan;
+  color: red;
+  margin: 5px;
+`

@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import Loja from '../components/Loja';
 import api from '../services/api';
+import styled from 'styled-components';
 
 const Lojas = () => {
   const [data, setData] = useState([]);
@@ -39,9 +40,17 @@ const Lojas = () => {
       {
         data.map((loja, index) => <Loja key={index} loja={loja} />)
       }
-      <button onClick={handleClick}>Aperte aqui para listar as lojas no console</button>
+      <Button onClick={handleClick}>Aperte aqui para listar as lojas no console</Button>
     </div>
   );
 }
 
 export default Lojas;
+
+const Button = styled.button`
+  border-radius: 5px;
+  background: transparent;
+  color: red;
+  box-shadow: 1px 1px 1px red;
+  margin: 5px;
+`

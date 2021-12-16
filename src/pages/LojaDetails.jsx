@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { useParams, Link } from "react-router-dom";
 import api from '../services/api';
-
+import styled from 'styled-components';
 
 const LojaDetails = () => {
   const params = useParams();
@@ -44,10 +44,18 @@ const LojaDetails = () => {
         }
       </ul>
       <Link to="/lojas">
-      <button>Voltar</button>
+        <Button>Voltar</Button>
       </Link>
     </div>
   )
 };
 
 export default LojaDetails;
+
+const Button = styled.button`
+  border-radius: 5px;
+  background: transparent;
+  color: red;
+  box-shadow: 1px 1px 1px red;
+  margin: 5px;
+`
