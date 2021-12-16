@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import api from '../services/api';
 
 
@@ -43,6 +43,9 @@ const LojaDetails = () => {
           enderecos.map((endereco, index) => <li key={index}>{endereco.text} geo: {endereco.geo}</li>)
         }
       </ul>
+      <Link to="/lojas">
+      <button>Voltar</button>
+      </Link>
     </div>
   )
 };
