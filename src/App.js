@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useEffect, useState } from "react";
+import Lojas from './pages/Lojas';
+import Landing from './pages/Landing';
+import { Routes, Route } from 'react-router-dom';
+import LojaDetails from './pages/LojaDetails';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <Routes>
+      <Route exact path='/' element={<Landing />} />
+      <Route exact path='/lojas' element={<Lojas />} />
+      <Route exact path='/lojas/:id' element={<LojaDetails />}/>
+    </Routes>
+  )
 }
 
 export default App;
