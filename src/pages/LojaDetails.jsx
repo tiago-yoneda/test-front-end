@@ -9,21 +9,21 @@ const LojaDetails = () => {
   const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const getLojaDetails = async () => {
-    const data = await api.get(`/${id}`,{
-      headers: {
-        ContentType: 'application/json',
-      },
-    })
-      .then(response => response.data)
-      .catch(err => console.log(err));
-    setDetails(data);
-    setLoading(false);
-  }
-
   useEffect(() => {
+    const getLojaDetails = async () => {
+      const data = await api.get(`/${id}`,{
+        headers: {
+          ContentType: 'application/json',
+        },
+      })
+        .then(response => response.data)
+        .catch(err => console.log(err));
+      setDetails(data);
+      setLoading(false);
+    }
+
     getLojaDetails();
-  },[]);
+  },[id]);
 
   const {nome, enderecos, logo} = details;
   
