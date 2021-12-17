@@ -40,7 +40,10 @@ const LojaDetails = () => {
       <img src={logo} alt="logo da loja" style={{width: 150}}/>
       <ul>
         {
-          enderecos.map((endereco, index) => <li key={index}>{endereco.text} geo: {endereco.geo}</li>)
+          enderecos.map((endereco, index) => {
+            const {text, lat, long} = endereco;
+            return <li key={index}>{text} lat: {lat} long: {long}</li>
+          })
         }
       </ul>
       <Link to="/lojas">
